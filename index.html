@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Project</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+        section{
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+            z-index: -1;
+        }
+        .bg{
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            z-index: 1000;
+            top:0%;
+            left:0%;
+            background-color: rgba(0, 0, 0, 0.425);
+        }
+        .vid{
+width: 99vw;
+height: 100vh;
+overflow: hidden;
+        }
+        body{
+            overflow: hidden;
+        }
+        .btn{
+            position: absolute;
+            left: 7%;
+            cursor: pointer;
+            bottom: 10%;
+            width: 100px;
+            padding:  10px 13px;
+            border-radius: 10px;
+            background-color: white;
+            z-index: 2000000;
+            color: black;
+            display: flex;
+            justify-content: space-between;
+        }
+        span
+        {
+            cursor: pointer;
+        }
+.abc
+{
+    cursor: pointer;
+    content: "";
+    width: 40px;
+    padding: 10px;
+    background-color: purple;
+    position: absolute;
+    border-radius: 10px;
+    /* left: 10px; */
+    /* left: 50%; */
+    left: 1%;
+    transition: 0.2s ease-in-out;
+}
+.move{
+    transform: translateX(90%);
+}
+    </style>
+</head>
+<body>
+    <section>
+        <div class="bg"></div>
+        <video class="vid" id="vd" src="./pexels-olya-kobruseva-6800638.mp4" autoplay  loop></video>
+
+    </section>
+    
+            <div class="btn">
+                <span>Pause</span>
+                <span>Resume</span>
+                <span class="abc"></span>
+            </div>
+
+</body>
+<script>
+    let control = document.querySelector(".abc")
+    let vid = document.querySelector("#vd")
+    control.addEventListener("click",function()
+    {
+
+        control.classList.toggle("move")
+        if(control.classList.contains("move")==true)
+        {
+vid.pause()
+        }
+        else{
+            vid.play()
+        }
+    })
+   
+</script>
+
+</html>
